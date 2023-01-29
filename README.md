@@ -1,11 +1,15 @@
 # PDF Generator
-This code is creating a PDF document using data from a CSV file. It reads in data from the CSV using the Pandas library and creates a new page for each row, setting the header and footer of the page with information from the row. It also creates lines on each page using a while loop. The final output is saved as "output.pdf".
+This code generates a PDF document based on the data from a CSV file "topics.csv".
 
-# What I learned?
+# Requirements
+- fpdf
+- pandas
 
-- How to use the FPDF library to create a PDF document in Python
-- How to use the Pandas library to read in data from a CSV file
-- How to iterate through rows of a dataframe
-- How to add new pages to a PDF document and set the header and footer of each page
-- How to create lines on a page using a while loop
-- How to output the final PDF document to a file
+# How it works
+The code reads the "topics.csv" file using pandas and iterates through each row of the data. For each row, a new page is added to the PDF document and the header is set with the value of the "Topic" column. The header is a 24-point font size and bold style "Times" font in a dark gray color. A line is drawn under the header and several horizontal lines are drawn across the page.
+
+For each page, the footer is set with the same "Topic" value and a 8-point font size and italic style "Times" font in a dark gray color. The footer is located at the bottom of the page.
+
+For each row with more than one page, the succeeding pages are generated with a line grid pattern and the same footer.
+
+The final output is saved as "output.pdf".
